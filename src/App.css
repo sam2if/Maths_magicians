@@ -4,9 +4,10 @@
 }
 
 p {
-  margin: 0.5px;
+  margin: 1px;
   text-align: center;
-  padding: 1em;
+  padding: 0.8em;
+  font-weight: bold;
 }
 .contain {
   margin-top: 4em;
@@ -30,7 +31,7 @@ p {
 
 .operators {
   background-color: orange;
-  background-repeat: no-repeat;
+  font-size: 1.2em;
 }
 
 .numbers {

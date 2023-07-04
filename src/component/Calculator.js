@@ -8,7 +8,7 @@ const Calculator = () => (
     <p className="numbers">7</p>
     <p className="numbers">8</p>
     <p className="numbers">9</p>
-    <p className="operators">X</p>
+    <p className="operators">x</p>
     <p className="numbers">4</p>
     <p className="numbers">5</p>
     <p className="numbers">6</p>
