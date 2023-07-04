@@ -1,7 +1,5 @@
-const Child = () => {
-    return ( 
-        <div className="child"></div>
-     );
-}
- 
+const Child = () => (
+  <div className="child" />
+);
+
 export default Child;
