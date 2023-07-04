@@ -9,8 +9,8 @@ p {
   padding: 0.8em;
   font-weight: bold;
 }
+
 .contain {
-  margin-top: 4em;
   width: 25%;
   margin: auto;
   display: grid;
