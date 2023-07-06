@@ -1,13 +1,11 @@
-import './App.css';
-import Calculator from './component/Calculator';
+import Calculator from './components/calculator';
+import User1 from './components/Prac';
 
-function App() {
+export default function MyApp() {
   return (
-    <div>
+    <div className="mul">
       <Calculator />
-      ;
+      <User1 />
     </div>
   );
 }
-
-export default App;
