@@ -1,11 +1,16 @@
-import Calculator from './components/calculator';
-import User1 from './components/Prac';
+import Affiche from './components/ZoumCalculator';
+import { Nav, DisplayQuote } from './components/quote';
+import './components/Calculator.css';
 
-export default function MyApp() {
+function App() {
   return (
-    <div className="mul">
-      <Calculator />
-      <User1 />
+
+    <div className="main">
+      <Nav />
+      <DisplayQuote />
+      <Affiche />
     </div>
+
   );
 }
+export default App;

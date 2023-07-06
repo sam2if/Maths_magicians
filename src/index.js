@@ -1,14 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+// import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+// import Affiche from './components/ZoumCalculator';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  document.getElementById('root'),
 );
-
-reportWebVitals();
