@@ -1,0 +1,31 @@
+$primary-color: #fff;
+$nav-width: 100%;
+$-nav-font-size: 1.2rem;
+$dark-color: #7a9d54;
+
+.navBar {
+  padding: 1rem;
+  width: $nav-width;
+  background-color: $primary-color;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navItem {
+  text-decoration: none;
+  font-size: $-nav-font-size;
+  color: green;
+  font-weight: bold;
+  border-right: 1px solid #172121;
+  padding-right: 2rem;
+}
+
+.navItem:hover {
+  color: $dark-color;
+}
