@@ -1,83 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import './quote.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export function Nav() {
-  return (
-    <header>
-      <div>Math magicians</div>
-      <div className="itemNav">
-        <div><button className="btnNav" type="button">Calculator</button></div>
-        <div><button className="btnNav" type="button">Quote</button></div>
-      </div>
-    </header>
-  );
-}
-
-const category = 'happiness';
-const url = `https://api.api-ninjas.com/v1/quotes?category=${category}`;
-
-export function DisplayQuote() {
+const Quote = () => {
+  const [quote, setQuote] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [results, setResults] = useState(null);
+  const quoteStyle = {
+    padding: '20px 0',
+    lineHeight: '1.5em',
+  };
 
   useEffect(() => {
-    const getQuote = async () => {
-      setLoading(true);
-      setError(null);
-      setResults(null);
-
+    const fetchQuote = async () => {
       try {
-        const res = await fetch(url, {
-          headers: {
-            'X-Api-Key': 'DhMsRgTrcM7oaH9gZgrECA==lE7WruG8Yf68gBt3',
-            'Content-Type': 'application/json',
+        const response = await axios.get(
+          'https://api.api-ninjas.com/v1/quotes?category=success',
+          {
+            headers: {
+              'X-Api-Key': 'MLitwyLPktsfrqe6cSpdzQ==MYn3WHZYciWuim32',
+            },
           },
-        });
-
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-
-        const data = await res.json();
-        setResults(data[0]);
-      } catch (error) {
-        setError(error);
-      } finally {
+        );
+        setQuote(response.data[0].quote);
         setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setError(error.message);
       }
     };
-
-    getQuote();
+    fetchQuote();
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <p style={quoteStyle}>Loading...</p>;
   }
 
   if (error) {
     return (
-      <div>
+      <p>
         Error:
-        {error.message}
-      </div>
+        {' '}
+        {error}
+      </p>
     );
   }
 
-  return (
-    <div className="quote">
-      <div>
-        <span>Author: </span>
-        {results.author}
-      </div>
-      <div>
-        <span>Category: </span>
-        {results.category}
-      </div>
-      <div>
-        <span>Quote: </span>
-        {results.quote}
-      </div>
-    </div>
-  );
-}
+  return <p>{quote}</p>;
+};
+
+export default Quote;

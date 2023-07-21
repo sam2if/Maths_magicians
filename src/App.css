@@ -1,0 +1,77 @@
+body {
+  background-color: var(--bg-white);
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+:root {
+  --btn-border: rgb(197, 194, 194);
+  --operator: #ffa600;
+  --paragraph-color: rgb(0, 0, 0);
+  --bgcolor: #e0e0e0;
+  --main-font: "Roboto", sans-serif;
+  --bg: #858694;
+  --wrapper-bg: rgba(85, 85, 85, 0.466);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px;
+  align-items: center;
+  width: 100vw;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.linkClass {
+  list-style: none;
+  display: flex;
+  margin: auto;
+  gap: 19px;
+}
+
+.linkClass li {
+  border: none;
+  border-right: 1px solid;
+  padding-right: 10px;
+}
+
+.linkClass #quoteLink {
+  border: none;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 5px;
+}
+
+p {
+  display: flex;
+  margin: auto;
+  width: 50vw;
+  padding: 8px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.wrapper {
+  padding: 10px 10px;
+  background: var(--wrapper-bg);
+  height: 60vh;
+  padding-bottom: 20rem;
+}
