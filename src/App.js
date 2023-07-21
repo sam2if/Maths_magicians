@@ -1,26 +1,22 @@
-import './App.css';
+/*eslint-disable*/
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Calculator from './components/MyCalculator';
-import Navigation from './components/Nav';
-import Home from './components/Home';
-import Quote from './components/Quote';
-import Footer from './components/Footer';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Calc from './pages/Calc';
+import Quotes from './components/display';
+import NavigationBar from './components/Navigation/navigationbar';
 
-function App() {
-  return (
-    <div className="App">
-      <div className="wrapper">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/calculator" element={<Calculator />} />
-          <Route path="/quote" element={<Quote />} />
-        </Routes>
-        <Footer />
-      </div>
+const App = () => (
+  <>
+    <NavigationBar />
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Calculator" element={<Calc />} />
+        <Route path="/FetchQuotes" element={<Quotes />} />
+      </Routes>
     </div>
-  );
-}
+  </>
+);
 
 export default App;
